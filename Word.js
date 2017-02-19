@@ -4,6 +4,18 @@ var Word = function(wrd){
     this.word = wrd;
     this.lets = []; //letter objects
     this.found = false;
+    this.guessedLetters = [];
+
+    this.newLetter = function(let){
+
+    if (this.guessedLetters.indexOf(let) < 0) {
+        //letter was not guessed yet. continue process
+        return true
+    } else {
+        //the letter was guessed alredy
+        return false
+    }   
+    };
 
     this.getLets = function() {
         for(var i = 0; i < this.word.length; i++) {
